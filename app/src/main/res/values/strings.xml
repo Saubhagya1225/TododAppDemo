@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TododAppDemo</string>
+    <string name="edit">Edit</string>
+    <string name="update_todo">Update Todo</string>
+    <string name="save_todo">Save Todo</string>
+    <string name="todo_type">todoType</string>
+    <string name="todo_title">todoTitle</string>
+    <string name="todo_desc">todoDescription</string>
+    <string name="todo_id">todoId</string>
+</resources>
