@@ -1,9 +1,9 @@
 package com.todo.tododappdemo
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity(), TodoAdapter.TodoClickInterface,
         intent.putExtra("noteTitle", todo.todoTitle)
         intent.putExtra("noteDescription", todo.todoDescription)
         intent.putExtra("noteId", todo.id)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
         this.finish()
     }

@@ -1,9 +1,9 @@
 package com.todo.tododappdemo
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.todo.tododappdemo.roomdb.Todo
 import com.todo.tododappdemo.viewmodel.TodoViewModal
@@ -62,13 +62,15 @@ class AddTodoActivity : AppCompatActivity() {
                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
                     val currentDateAndTime: String = sdf.format(Date())
                     // if the string is not empty we are calling a
-                    // add note method to add data to our room database.
+                    // add todo method to add data to our room database.
                     viewModal.addTodo(Todo(noteTitle, noteDescription, currentDateAndTime))
                     Toast.makeText(this, "$noteTitle Added", Toast.LENGTH_LONG).show()
                 }
             }
             // opening the new activity on below line
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
             this.finish()
         }
 
